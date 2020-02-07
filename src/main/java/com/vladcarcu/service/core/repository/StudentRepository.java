@@ -13,4 +13,7 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
 
     @RestResource(rel = "byname", path = "byname")
     List<Student> findAllByNameContainsIgnoreCase(String name);
+
+    @RestResource(rel = "byid", path = "byid")
+    List<Student> findAllByIdIn(List<Long> ids);
 }
